@@ -1,0 +1,7 @@
+{
+  "name": "myfinal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
