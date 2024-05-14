@@ -20,6 +20,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/favicon.ico",
+               "src/assets",
+               {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "/leaflet/"
+              },
               {
                 "glob": "**/*",
                 "input": "src/assets",
@@ -31,7 +38,8 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": [
+            "src/theme/variables.scss","node_modules/leaflet/dist/leaflet.css", "src/global.scss"],
             "scripts": []
           },
           "configurations": {
@@ -105,6 +113,12 @@
                 "input": "src/assets",
                 "output": "assets"
               },
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "/leaflet/"
+              }
+              ,
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",

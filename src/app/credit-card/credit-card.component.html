@@ -1,0 +1,253 @@
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+<ion-content [scrollEvents]="true">
+  <header class="section-header">
+    <section class="header-main border-bottom">
+        <div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-2 col-4">
+          <img src="assets/images/posteTunis.jpg" width="" height="" class="w-100 rounded">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <form action="#" class="search">
+                <div class="input-group w-100">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                </div>
+            </form> <!-- search-wrap .end// -->
+        </div> <!-- col.// -->
+       <!--
+ <div class="col-lg-4 col-sm-6 col-12">
+            <div class="widgets-wrap float-md-end">
+                <div class="widget-header  me-3">
+                    <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+                    <span class="badge badge-pill badge-danger notify">0</span>
+                </div>
+                <div class="widget-header icontext">
+                    <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                    <div class="text">
+                        <span class="text-muted">Welcome!</span>
+                       
+                        <div> 
+                            <a href="/maps">Sign in</a> |  
+                            <a href="/login"> Agence</a>
+                        </div>
+                        // 
+                    </div>
+                </div>
+    
+            </div> <!*-- widgets-wrap.// --*>
+          </div>
+
+       -->
+         <!-- col.// -->
+    </div> <!-- row.// -->
+        </div> <!-- container.// -->
+    </section> <!-- header-main .// -->
+    
+    
+    
+    <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+      <div class="container">
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+               <a class="nav-link" href="/menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/maps">Nous trouver</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/partner">Partenariat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news">Informations</a>
+            </li>
+           
+           
+            
+          </ul>
+        </div> <!-- collapse .// -->
+      </div> <!-- container .// -->
+    </nav>
+    
+    </header> <!-- section-header.// -->
+    
+    
+    <!-- ========================= SECTION MAIN ========================= -->
+    <section class="section-name padding-y-sm">
+    
+    </section>
+    <!-- ========================= SECTION  END// ========================= -->
+    
+    <ion-card>
+      <div class="container">
+        
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+          <br>
+          <ion-item>
+            <div class="form-group">
+              <ion-label  position="floating">Numéro de carte e-dinar</ion-label>
+              <ion-input type="text" name="cardNumber" required minlength="16" ngModel #n="ngModel"></ion-input>
+            </div>
+            <div class="alert alert-danger" *ngIf="n.invalid && n.touched">Le numéro de la carte/compte requiert 16 caracteres</div>
+  
+          </ion-item>
+          
+          <br>
+
+          <ion-item>
+            <div class="form-group">
+            <ion-label  position="floating">Numéro de compte bancaire</ion-label>
+            <ion-input type="text" name="cardNumber" required minlength="16" ngModel #c="ngModel"></ion-input>
+          </div>
+          <div class="alert alert-danger" *ngIf="c.invalid && c.touched">27 Caractères requis </div>
+       
+         
+          </ion-item>
+
+          <br>
+          <ion-item>
+            <div class="form-group">
+            <ion-label  position="string">Mot de passe </ion-label>
+            <ion-input type="password" name="Password"  ngModel #p="ngModel" required minlength="8" ></ion-input>
+          </div>
+          <div class="alert alert-danger" *ngIf="p.invalid && p.touched">Le mot de passe requiert 8 caracteres</div>
+        
+          </ion-item>
+  
+          <br>
+          
+        
+        <div class="form-group">
+          <ion-item>
+            <ion-label position="floating">Montant</ion-label>
+            <ion-input type="number" name="amount"  required  ngModel #a="ngModel" ></ion-input>
+            <div class="alert alert-danger" *ngIf="a.invalid && a.touched">Montant requis</div>
+            
+          </ion-item>
+        </div>
+          <ion-button type="credit" id="open-stacked-toast" [disabled]="!myForm.valid" color="success">Crediter</ion-button>
+        </form>
+        </div>
+      </ion-card>
+      
+      
+        <ion-toast
+        trigger="open-stacked-toast" 
+        [duration]="150000"
+        [buttons]="toastButtons"
+        message="Carte créditée avec succèss." 
+        layout="stacked"
+        icon="checkmark-done-outline"
+        color="success"
+      ></ion-toast>
+
+    
+    <!-- ========================= SECTION  ========================= -->
+    <section class="section-name padding-y bg">
+      <div class="container">
+      
+      <div class="row">
+      <div class="col-md-6">
+          <h3>Disponibilité</h3>
+          <p>Notre application incroyable pour vous faciliter la vie</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+          <a href="#"><img src="assets/images/store.png" height="60"></a>
+  
+      </div>
+      </div> <!-- row.// -->
+      </div><!-- container // -->
+      </section>
+      <!-- ========================= SECTION  END// ======================= -->
+      
+      
+      
+      <!-- ========================= FOOTER ========================= -->
+    <footer class="section-footer border-top bg">
+      <div class="container">
+        <section class="footer-top  padding-y">
+          <div class="row">
+            <aside class="col-md col-6">
+              <h6 class="title">Partenariat</h6>
+              <ul class="list-unstyled">
+                <li> <a href="#">Dhl</a></li>
+                <li> <a href="#">Moneygram</a></li>
+                <li> <a href="#">Wester Union</a></li>
+                
+              </ul>
+            </aside>
+            <aside class="col-md col-6">
+              <h6 class="title">Entreprise</h6>
+              <ul class="list-unstyled">
+                <li> <a href="/menu">À propos de nous</a></li>
+                
+                <li> <a href="#">Nous trouver</a></li>
+                <li> <a href="#">Règles et conditions</a></li>
+                
+              </ul>
+            </aside>
+            <aside class="col-md col-6">
+              <h6 class="title">Aide</h6>
+              <ul class="list-unstyled">
+                <li> <a href="#">Nous Contacter </a></li>
+                <li> <a href="#">Remboursement d'argent</a></li> 
+                <li> <a href="#">Ouvrir une contestation</a></li>
+              </ul>
+            </aside>
+            <aside class="col-md col-6">
+              <h6 class="title">Compte</h6>
+              <ul class="list-unstyled">
+                <li> <a href="#"> Utilisateur en ligne </a></li>
+                <li> <a href="#"> Registre des utilisateurs </a></li>
+                <li> <a href="#"> Paramètre du compte </a></li>
+               
+              </ul>
+            </aside>
+            <aside class="col-md">
+              <h6 class="title">Social</h6>
+              <ul class="list-unstyled">
+                <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+                <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+                <li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+                <li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
+              </ul>
+            </aside>
+          </div> <!-- row.// -->
+        </section>  <!-- footer-top.// -->
+        <section class="footer-bottom row">
+          <div class="col-md-2">
+            <p class="text-muted">   2023 La Poste Tunisienne </p>
+          </div>
+          <div class="col-md-8 text-md-center">
+            <span  class="px-2">info@com</span>
+            <span  class="px-2">+216-000-0000</span>
+            <span  class="px-2">Street name 123, ABC</span>
+          </div>
+          <div class="col-md-2 text-md-end text-muted">
+            <i class="fab fa-lg fa-cc-visa"></i> 
+            <i class="fab fa-lg fa-cc-paypal"></i> 
+            <i class="fab fa-lg fa-cc-mastercard"></i>
+          </div>
+        </section>
+      </div><!-- //container -->
+    </footer>
+    <!-- ========================= FOOTER END // ========================= -->
+    </ion-content>
+  

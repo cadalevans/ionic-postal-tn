@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { LoginComponent } from '../login/login.component';
+import { RegistrationComponent } from '../registration/registration.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 
 @NgModule({
